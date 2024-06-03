@@ -6,7 +6,7 @@ pipeline {
 
         stage('Navigate to Frontend Directory') {
             steps {
-                dir('frontend') {
+                dir('FrontEnd') {
                     // 全局安装 Vue CLI
                     sh 'npm install -g @vue/cli'
 
@@ -21,7 +21,7 @@ pipeline {
 
         stage('Archive Artifacts') {
             steps {
-                dir('frontend') {
+                dir('FrontEnd') {
                     // 存档构建产物以供后续步骤使用
                     archiveArtifacts artifacts: 'dist/**', allowEmptyArchive: true
                 }
