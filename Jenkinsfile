@@ -3,6 +3,17 @@ pipeline {
 
     stages {
 
+        stage('init') {
+            echo 'Build'
+        }
+
+            dir('FrontEnd') {
+                steps {
+                    // 全局安装 Vue CLI
+                    sh 'npm install -g @vue/cli'
+                }
+            }
+        }
         stage('Install Vue CLI') {
             dir('FrontEnd') {
                 steps {
